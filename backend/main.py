@@ -1,3 +1,4 @@
+# main.py
 from fastapi import FastAPI, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,6 +10,15 @@ from typing import Optional, List
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
+import importlib.util
+import os
+
+# ✅ Dynamically load respond_route.py
+respond_path = os.path.join(os.path.dirname(__file__), "routes", "respond_route.py")
+spec = importlib.util.spec_from_file_location("respond_route", respond_path)
+respond_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(respond_module)
+respond_router = respond_module.router
 
 # -----------------------
 # CONFIG
@@ -52,7 +62,6 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-
 # -----------------------
 # Pydantic Schemas
 # -----------------------
@@ -82,6 +91,7 @@ class ForgotPasswordRequest(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
+
 # -----------------------
 # Dependency: DB session
 # -----------------------
@@ -131,11 +141,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ✅ Connect respond route
+app.include_router(respond_router)
 
 # -----------------------
 # Auth & Profile Routes
