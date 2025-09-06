@@ -5,9 +5,9 @@ numpy
 scikit-learn
 fastapi
 uvicorn
-python-jose
+python-jose[cryptography]
 sqlalchemy
-passlib
-bcrypt
+passlib[bcrypt]
+bcrypt==4.0.1
 transformers
 deep-translator

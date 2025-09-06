@@ -1,6 +1,6 @@
 # main.py
-from fastapi import FastAPI, Depends, HTTPException, status, Request
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
+from fastapi import FastAPI, Depends, HTTPException, status, Request, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from passlib.context import CryptContext
@@ -49,7 +49,6 @@ Base.metadata.create_all(bind=engine)
 # Security helpers
 # -----------------------
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
@@ -62,6 +61,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
 # -----------------------
 # Pydantic Schemas
 # -----------------------
@@ -71,6 +71,14 @@ class RegisterRequest(BaseModel):
     age: int
     language: str
     password: str
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
 
 class ProfileResponse(BaseModel):
     email: str
@@ -87,11 +95,6 @@ class UpdateProfileRequest(BaseModel):
 class ForgotPasswordRequest(BaseModel):
     email: str
     new_password: str
-
-class TokenResponse(BaseModel):
-    access_token: str
-    token_type: str
-
 # -----------------------
 # Dependency: DB session
 # -----------------------
@@ -111,12 +114,15 @@ def authenticate_user(db: Session, email: str, password: str):
         return False
     return user
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
+def get_current_user(authorization: str = Header(...), db: Session = Depends(get_db)) -> User:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials. Please login again.",
         headers={"WWW-Authenticate": "Bearer"},
     )
+    if not authorization.startswith("Bearer "):
+        raise credentials_exception
+    token = authorization.split("Bearer ")[1]
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         email: str = payload.get("sub")
@@ -147,7 +153,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ Connect respond route
 app.include_router(respond_router)
 
 # -----------------------
@@ -170,8 +175,8 @@ def register(request: RegisterRequest, db: Session = Depends(get_db)):
     return {"msg": "Registration successful"}
 
 @app.post("/token", response_model=TokenResponse)
-def token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
-    user = authenticate_user(db, form_data.username, form_data.password)
+def token(request: LoginRequest, db: Session = Depends(get_db)):
+    user = authenticate_user(db, request.email, request.password)
     if not user:
         raise HTTPException(status_code=401, detail="Invalid email or password")
     access_token = create_access_token(data={"sub": user.email})
@@ -222,8 +227,8 @@ def debug_users(db: Session = Depends(get_db)):
     return [{"email": r.email, "full_name": r.full_name, "age": r.age, "language": r.language} for r in rows]
 
 @app.get("/debug/token")
-def debug_token(request: Request, token: str = Depends(oauth2_scheme)):
+def debug_token(request: Request, authorization: str = Header(...)):
     return {
         "headers": dict(request.headers),
-        "token": token
+        "token": authorization
     }

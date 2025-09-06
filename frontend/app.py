@@ -104,29 +104,42 @@ elif choice == T["register"]:
         email = st.text_input("Email", value=st.session_state.email)
         full_name = st.text_input("Full Name", value=st.session_state.full_name)
         age = st.number_input("Age", min_value=1, max_value=120, step=1, value=st.session_state.age)
-        language = st.selectbox("Preferred Language", ["English", "Hindi"], index=["English", "Hindi"].index(st.session_state.language))
+
+        lang_options = ["English", "Hindi"]
+        current_lang = st.session_state.language.capitalize() if st.session_state.language else "English"
+        if current_lang not in lang_options:
+            current_lang = "English"
+        language = st.selectbox("Preferred Language", lang_options, index=lang_options.index(current_lang))
+
         password = st.text_input("Password", type="password")
+        st.caption("🔐 Password must be at least 6 characters long.")
+
         submit = st.form_submit_button("Register")
 
         if submit:
-            res = requests.post(f"{API_URL}/register", json={
-                "email": email, "full_name": full_name,
-                "age": age, "language": language, "password": password
-            })
-            if res.status_code == 200:
-                st.session_state.token = None
-                st.session_state.last_login = None
-                st.session_state.email = email
-                st.session_state.full_name = full_name
-                st.session_state.age = age
-                st.session_state.language = language
-                placeholder = st.empty()
-                for dots in ["", ".", "..", "..."]:
-                    placeholder.success(T["reg_success"] + dots)
-                    time.sleep(0.4)
-                placeholder.success(T["reg_success"])
+            if len(password) < 6:
+                st.error("⚠ Password must be at least 6 characters.")
             else:
-                st.error(res.json().get("detail", "Registration failed"))
+                res = requests.post(f"{API_URL}/register", json={
+                    "email": email, "full_name": full_name,
+                    "age": age, "language": language, "password": password
+                })
+                if res.status_code == 200:
+                    st.session_state.token = None
+                    st.session_state.last_login = None
+                    st.session_state.email = email
+                    st.session_state.full_name = full_name
+                    st.session_state.age = age
+                    st.session_state.language = language
+                    placeholder = st.empty()
+                    for dots in ["", ".", "..", "..."]:
+                        placeholder.success(T["reg_success"] + dots)
+                        time.sleep(0.4)
+                    placeholder.success(T["reg_success"])
+                elif res.status_code == 400 and res.json().get("detail") == "User already exists":
+                    st.warning("⚠ This email is already registered. Please login instead.")
+                else:
+                    st.error(res.json().get("detail", "Registration failed"))
 
 # -----------------------
 # Login
@@ -139,18 +152,21 @@ elif choice == T["login"]:
         submit = st.form_submit_button("Login")
 
         if submit:
-            res = requests.post(f"{API_URL}/token", data={"username": email, "password": password})
-            if res.status_code == 200:
-                st.session_state.token = res.json()["access_token"]
-                st.session_state.last_login = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                st.session_state.email = email
-                placeholder = st.empty()
-                for dots in ["", ".", "..", "..."]:
-                    placeholder.success(T["login_success"] + dots)
-                    time.sleep(0.4)
-                placeholder.success(T["login_success"])
+            if not email or not password:
+                st.error("⚠ Email and password cannot be empty.")
             else:
-                st.error(res.json().get("detail", "Login failed"))
+                res = requests.post(f"{API_URL}/token", json={"email": email, "password": password})
+                if res.status_code == 200:
+                    st.session_state.token = res.json()["access_token"]
+                    st.session_state.last_login = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    st.session_state.email = email
+                    placeholder = st.empty()
+                    for dots in ["", ".", "..", "..."]:
+                        placeholder.success(T["login_success"] + dots)
+                        time.sleep(0.4)
+                    placeholder.success(T["login_success"])
+                else:
+                    st.error(res.json().get("detail", "Login failed"))
 # -----------------------
 # Profile
 # -----------------------
@@ -191,7 +207,13 @@ elif choice == T["profile"]:
             with st.form("update_profile_form"):
                 new_full_name = st.text_input("Full Name", value=st.session_state.full_name)
                 new_age = st.number_input("Age", min_value=1, max_value=120, value=st.session_state.age)
-                new_language = st.selectbox("Preferred Language", ["English", "Hindi"], index=["English", "Hindi"].index(st.session_state.language))
+
+                lang_options = ["English", "Hindi"]
+                current_lang = st.session_state.language.capitalize() if st.session_state.language else "English"
+                if current_lang not in lang_options:
+                    current_lang = "English"
+                new_language = st.selectbox("Preferred Language", lang_options, index=lang_options.index(current_lang))
+
                 submit = st.form_submit_button("Update")
 
                 if submit:
