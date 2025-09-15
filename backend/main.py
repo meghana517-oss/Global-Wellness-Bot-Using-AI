@@ -1,40 +1,32 @@
-# main.py
-
-from fastapi import FastAPI, Depends, HTTPException, status, Request, Header
+from fastapi import FastAPI, Depends, HTTPException, status, Header, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import HTTPBearer
+from fastapi.openapi.utils import get_openapi
 from pydantic import BaseModel
 from passlib.context import CryptContext
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from typing import Optional, List
-from sqlalchemy import create_engine, Column, String, Integer
+from typing import Optional, List, Dict, Tuple
+from sqlalchemy import create_engine, Column, String, Integer, Float, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
-import importlib.util
+from difflib import get_close_matches, SequenceMatcher
+import random
+import re 
 import os
-
-# ✅ Dynamically load respond_route.py
-respond_path = os.path.join(os.path.dirname(__file__), "routes", "respond_route.py")
-spec = importlib.util.spec_from_file_location("respond_route", respond_path)
-respond_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(respond_module)
-respond_router = respond_module.router
-
-# -----------------------
-# CONFIG
-# -----------------------
-SECRET_KEY = "replace_this_with_a_strong_secret"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
-DATABASE_URL = "sqlite:///./wellness.db"
 
 # -----------------------
 # SQLAlchemy setup
 # -----------------------
-Base = declarative_base()
+
+DATABASE_URL = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'wellness.db')}"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+Base = declarative_base()
 
+# -----------------------
+# Database Models
+# -----------------------
 class User(Base):
     __tablename__ = "users"
     email = Column(String, primary_key=True, index=True)
@@ -43,11 +35,50 @@ class User(Base):
     language = Column(String, default="English")
     hashed_password = Column(String, nullable=False)
 
+class Dialogue(Base):
+    __tablename__ = "dialogues"
+    intent = Column(String, primary_key=True)
+    response = Column(String, nullable=False)
+    confidence = Column(Float, nullable=True)
+
+class Symptom(Base):
+    __tablename__ = "symptoms"
+    symptom_name = Column(String, primary_key=True)
+    description = Column(String, nullable=False)
+
+class Medication(Base):
+    __tablename__ = "medications"
+    condition = Column(String, primary_key=True)
+    medicine_name = Column(String, nullable=False)
+
+class FirstAid(Base):
+    __tablename__ = "first_aid"
+    issue = Column(String, primary_key=True)
+    steps = Column(String, nullable=False)
+
+class WellnessTip(Base):
+    __tablename__ = "wellness_tips"
+    id = Column(Integer, primary_key=True)
+    tip_text = Column(Text, nullable=False)
+    category = Column(String, nullable=False)
+
+class Message(Base):
+    __tablename__ = "messages"
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, nullable=False)
+    user_text = Column(Text, nullable=False)
+    bot_response = Column(Text, nullable=False)
+    intent = Column(String)
+    timestamp = Column(DateTime, default=datetime.utcnow)
+
 Base.metadata.create_all(bind=engine)
 
 # -----------------------
 # Security helpers
 # -----------------------
+SECRET_KEY = "replace_this_with_a_strong_secret"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_password_hash(password: str) -> str:
@@ -61,6 +92,48 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+# -----------------------
+# FastAPI App & Middleware
+# -----------------------
+app = FastAPI(
+    title="Wellness Hub API",
+    description="Multilingual wellness assistant with secure authentication",
+    version="1.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+security_scheme = HTTPBearer()
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title=app.title,
+        version=app.version,
+        description=app.description,
+        routes=app.routes,
+    )
+    openapi_schema["components"]["securitySchemes"] = {
+        "BearerAuth": {
+            "type": "http",
+            "scheme": "bearer"
+        }
+    }
+    for path in openapi_schema["paths"].values():
+        for method in path.values():
+            method.setdefault("security", [{"BearerAuth": []}])
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+app.openapi = custom_openapi
 
 # -----------------------
 # Pydantic Schemas
@@ -95,8 +168,20 @@ class UpdateProfileRequest(BaseModel):
 class ForgotPasswordRequest(BaseModel):
     email: str
     new_password: str
+
+class RespondRequest(BaseModel):
+    text: str
+    intent: Optional[List[str]] = []
+    confidence_scores: Optional[Dict[str, float]] = {}
+    last_tip: Optional[str] = None
+
+class RespondResponse(BaseModel):
+    response: str
+    intent: List[str]
+    confidence_scores: Dict[str, float]
+
 # -----------------------
-# Dependency: DB session
+# Dependencies
 # -----------------------
 def get_db():
     db = SessionLocal()
@@ -135,25 +220,6 @@ def get_current_user(authorization: str = Header(...), db: Session = Depends(get
     if user is None:
         raise credentials_exception
     return user
-
-# -----------------------
-# FastAPI App & Middleware
-# -----------------------
-app = FastAPI(
-    title="Wellness Hub API",
-    description="Multilingual wellness assistant with secure authentication",
-    version="1.0"
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.include_router(respond_router)
 
 # -----------------------
 # Auth & Profile Routes
@@ -219,16 +285,47 @@ def forgot_password(request: ForgotPasswordRequest, db: Session = Depends(get_db
     return {"msg": "Password reset successful"}
 
 # -----------------------
-# Dev Helpers (Optional)
+# DialogueManager Integration
 # -----------------------
-@app.get("/debug/users", response_model=List[ProfileResponse])
-def debug_users(db: Session = Depends(get_db)):
-    rows = db.query(User).all()
-    return [{"email": r.email, "full_name": r.full_name, "age": r.age, "language": r.language} for r in rows]
+from backend.knowledge_base import query_db, LANGUAGE_MAP
+from backend.dialogue_manager import DialogueManager
+dialogue_manager = DialogueManager()
 
-@app.get("/debug/token")
-def debug_token(request: Request, authorization: str = Header(...)):
-    return {
-        "headers": dict(request.headers),
-        "token": authorization
-    }
+respond_router = APIRouter()
+
+@respond_router.post("/respond", response_model=RespondResponse)
+def respond(request: RespondRequest, db: Session = Depends(get_db)):
+    dialogue_manager = DialogueManager()
+    try:
+        result = dialogue_manager.generate_response(request.text)
+
+        message = Message(
+            email="anonymous",
+            user_text=request.text,
+            bot_response=result["response"],
+            intent=result["intent"],
+            timestamp=datetime.utcnow()
+        )
+
+        db.add(message)
+        db.commit()
+
+        return RespondResponse(
+            response=result["response"],
+            intent=[result["intent"]],
+            confidence_scores={result["intent"]: 1.0}
+        )
+
+    except Exception as e:
+        db.rollback()
+        return RespondResponse(
+            response=f"⚠️ Internal error: {str(e)}",
+            intent=["error"],
+            confidence_scores={"error": 0.0}
+        )
+
+    finally:
+        db.close()
+        dialogue_manager.close()
+
+app.include_router(respond_router)
