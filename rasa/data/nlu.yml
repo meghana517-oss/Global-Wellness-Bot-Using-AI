@@ -1,0 +1,289 @@
+version: "3.1"
+
+nlu:
+- intent: ask_about_symptom
+  examples: |
+    - What are the symptoms of [dengue](condition)?
+    - How do I know if I have [malaria](condition)?
+    - Tell me the signs of [typhoid](condition)
+    - What symptoms does [stomach ache](condition) cause?
+    - [डेंगू](condition) के लक्षण क्या हैं?
+    - [मलेरिया](condition) के संकेत क्या हैं?
+    - [टाइफाइड](condition) के लक्षण बताइए
+    - [पेट दर्द](condition) के लक्षण क्या होते हैं?
+
+- intent: query_first_aid
+  examples: |
+    - What should I do for [dehydration](condition)?
+    - First aid for [dengue](condition)?
+    - How to treat [malaria](condition) at home?
+    - What to do if I have [typhoid](condition)?
+    - [डिहाइड्रेशन](condition) के लिए क्या करना चाहिए?
+    - [डेंगू](condition) के लिए प्राथमिक उपचार क्या है?
+    - [मलेरिया](condition) का घरेलू इलाज कैसे करें?
+    - [टाइफाइड](condition) के लिए क्या करना चाहिए?
+    - [टाइफाइड](condition) में आराम कैसे मिले?
+    - मुझे क्या करना चाहिए अगर मुझे [मलेरिया](condition) है?
+    - घरेलू इलाज बताइए
+
+- intent: ask_about_wellness_tip
+  examples: |
+    - How can I stay healthy during monsoon?
+    - Tips to avoid mosquito bites
+    - How to prevent dehydration?
+    - Give me some wellness advice
+    - मानसून में स्वस्थ कैसे रहें?
+    - मच्छरों से बचने के उपाय बताइए
+    - डिहाइड्रेशन से कैसे बचें?
+    - मुझे कुछ स्वास्थ्य सुझाव दीजिए
+    - तनाव से बचने के उपाय क्या हैं?
+
+- intent: ask_about_condition
+  examples: |
+    - Tell me about [stomach ache](condition)
+    - What is [dengue](condition)?
+    - Explain [typhoid](condition)
+    - Describe [malaria](condition)
+    - [पेट दर्द](condition) के बारे में बताइए
+    - [डेंगू](condition) क्या है?
+    - [टाइफाइड](condition) को समझाइए
+    - [मलेरिया](condition) के बारे में जानकारी दीजिए
+
+- intent: ask_about_emotion
+  examples: |
+    - I feel [anxious](emotion) and [tired](symptom)
+    - What should I do if I feel [stressed](emotion)?
+    - How to manage [worry](emotion)?
+    - मैं [चिंतित](emotion) और [थकी](symptom) हुई महसूस कर रही हूँ
+    - अगर मैं [तनाव](emotion) में हूँ तो क्या करना चाहिए?
+    - [चिंता](emotion) को कैसे नियंत्रित करें?
+    - I'm emotionally [drained](emotion)
+    - तनाव में क्या करना चाहिए?
+    - मैं तनाव में हूँ
+    - How to manage stress?
+
+- intent: ask_about_medication
+  examples: |
+    - What medicine helps with [fever](symptom)?
+    - Which drug is used for [malaria](symptom)?
+    - Suggest something for [headache](symptom)
+    - बुखार के लिए कौन सी [दवा](medication) ली जाती है?
+    - सिरदर्द के लिए क्या [दवा](medication) है?
+    - मलेरिया के लिए कौन सी [दवा](medication) दी जाती है?
+    - Which tablet is good for [cold](symptom)?
+    - क्या मैं पैरासिटामोल ले सकता हूँ?
+    - पैरासिटामोल लेना ठीक रहेगा?
+    - मुझे सिरदर्द है, कोई दवा बताओ
+    - मलेरिया के लिए कौन सी दवा दी जाती है?
+    - बुखार के लिए कौन सी गोली ली जाती है?
+    - एस्पिरिन लेना ठीक है?
+    - आइबुप्रोफेन सुरक्षित है?
+    - मुझे उल्टी हो रही है, कोई दवा है?
+
+- intent: ask_about_duration
+  examples: |
+    - I’ve had [fever](symptom) for [three days](duration)
+    - How long does [malaria](symptom) last?
+    - I’ve been coughing since [morning](duration)
+    - मुझे [तीन दिनों](duration) से [बुखार](symptom) है
+    - [मलेरिया](symptom) कितने समय तक रहता है?
+    - मुझे [सुबह](duration) से [खांसी](symptom) है
+
+- intent: ask_about_body_part
+  examples: |
+    - My [legs](body_part) hurt
+    - I feel pain in my [chest](body_part)
+    - What does [stomach](body_part) pain indicate?
+    - मेरे [पैर](body_part) में दर्द है
+    - मेरे [सीने](body_part) में दर्द हो रहा है
+    - [पेट](body_part) में दर्द किस कारण होता है?
+
+- intent: ask_about_age_group
+  examples: |
+    - My [child](age_group) has [fever](symptom)
+    - What to do if an [elderly](age_group) person has [cough](symptom)?
+    - [बच्चे](age_group) को [बुखार](symptom) है, क्या करें?
+    - अगर [बुजुर्ग](age_group) को [खांसी](symptom) हो तो क्या करना चाहिए?
+    - [बच्चों](age_group) के लिए प्राथमिक उपचार क्या है?
+
+- intent: ask_about_prevention
+  examples: |
+    - How can I prevent [dengue](condition)?
+    - Tips to avoid [dehydration](condition)
+    - How to stay safe from [malaria](condition)?
+    - [डेंगू](condition) से कैसे बचा जा सकता है?
+    - [डिहाइड्रेशन](condition) से बचने के उपाय बताइए
+    - [मलेरिया](condition) से सुरक्षित कैसे रहें?
+    - [टाइफाइड](condition) से बचने के उपाय क्या हैं?
+
+- intent: report_emotion
+  examples: |
+    - I’m feeling [anxious](emotion)
+    - I feel [stressed](emotion) and [weak](symptom)
+    - I’m emotionally [drained](emotion)
+    - मैं [चिंतित](emotion) महसूस कर रही हूँ
+    - मैं [तनाव](emotion) में हूँ और [कमज़ोरी](symptom) महसूस हो रही है
+    - मैं भावनात्मक रूप से [थकी](emotion) हुई हूँ
+
+- intent: report_symptom
+  examples: |
+    - I have [fever](symptom) and [headache](symptom)
+    - Feeling [fatigue](symptom) in my [legs](body_part)
+    - [Nausea](symptom) and [dizziness](symptom) since [morning](duration)
+    - Took [paracetamol](medication) but still feel [weak](symptom)
+    - I’m feeling [anxious](emotion) about [chest](body_part) pain
+    - My [child](age_group) has [cough](symptom) and [sore throat](symptom)
+    - मुझे [बुखार](symptom) और [सिरदर्द](symptom) है
+    - मेरे [पेट](body_part) में [दर्द](symptom) हो रहा है
+    - [थकान](symptom) और [कमज़ोरी](symptom) महसूस हो रही है
+    - मैंने [पैरासिटामोल](medication) ली लेकिन अभी भी [कमज़ोरी](symptom) महसूस हो रही है
+    - मैं [चिंतित](emotion) महसूस कर रही हूँ क्योंकि [सीने](body_part) में दर्द है
+    - मेरे [बच्चे](age_group) को [खांसी](symptom) और [गले में खराश](symptom) है
+
+- intent: ask_common_entities
+  examples: |
+    - What are the most common health issues?
+    - Show me frequently mentioned conditions
+    - Which diseases are trending?
+    - कौन सी बीमारियाँ सबसे ज़्यादा पूछी जाती हैं?
+    - आम स्वास्थ्य समस्याएँ क्या हैं?
+    - सबसे ज़्यादा पूछे गए लक्षण कौन से हैं?
+    - Trending conditions क्या हैं?
+    - Common entities बताइए
+
+- intent: greet
+  examples: |
+    - Hello
+    - Hi
+    - Hey there
+    - Good morning
+    - नमस्ते
+    - हेलो
+    - शुभ प्रभात
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - See you later
+    - Goodbye
+    - Thanks, I'm done
+    - धन्यवाद
+    - अलविदा
+    - फिर मिलेंगे
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Are you human?
+    - What are you?
+    - Are you real?
+    - क्या आप एक बॉट हैं?
+    - क्या आप इंसान हैं?
+    - आप क्या हैं?
+    - क्या आप असली हैं?
+
+# Lookup tables
+- lookup: symptom
+  examples: |
+    - बुखार
+    - सिरदर्द
+    - थकान
+    - nausea
+    - dizziness
+    - fatigue
+    - खांसी
+    - गले में खराश
+    - कमज़ोरी
+    - उल्टी
+    - चक्कर
+    - पेट दर्द
+    - सीने में दर्द
+    - शरीर में दर्द
+    - ठंड लगना
+    - जुकाम
+    - कमजोरी
+    - दर्द
+    - भूख न लगना
+    - पसीना आना
+    - cold
+    - sore throat
+    - dizziness, 
+    - weakness,
+    - chills, 
+    - runny nose
+
+- lookup: condition
+  examples: |
+    - dengue
+    - malaria
+    - typhoid
+    - stomach ache
+    - dehydration
+    - headache
+    - fever
+    - डेंगू
+    - मलेरिया
+    - टाइफाइड
+    - डिहाइड्रेशन
+    - सिरदर्द
+    - बुखार
+
+- lookup: emotion
+  examples: |
+    - anxious
+    - stressed
+    - worried
+    - drained
+    - tense
+    - overwhelmed
+    - sad
+    - चिंता
+    - तनाव
+    - चिंतित
+    - थकी
+    - उदास
+    - निराश
+
+- lookup: body_part
+  examples: |
+    - legs
+    - chest
+    - stomach
+    - head
+    - throat
+    - back
+    - सीना
+    - पेट
+    - सिर
+    - गला
+    - पीठ
+    - पैर
+
+- lookup: medication
+  examples: |
+    - paracetamol
+    - aspirin
+    - ibuprofen
+    - ORS
+    - antacid
+    - painkiller
+    - पैरासिटामोल
+    - एस्पिरिन
+    - आइबुप्रोफेन
+    - ओआरएस
+    - एंटासिड
+    - दर्द निवारक
+
+- lookup: age_group
+  examples: |
+    - child
+    - adult
+    - elderly
+    - senior
+    - baby
+    - बच्चों
+    - बच्चे
+    - वयस्क
+    - बुजुर्ग
+    - नवजात
+

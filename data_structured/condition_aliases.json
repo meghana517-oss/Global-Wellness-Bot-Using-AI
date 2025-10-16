@@ -1,0 +1,277 @@
+{
+  "Stomach Ache": {
+    "en": ["stomach ache", "stomach pain", "abdominal pain", "tummy pain", "belly pain", "cramping", "stomach discomfort"],
+    "hi": ["पेट दर्द", "पेट में दर्द", "पेट में मरोड़", "पेट की असहजता", "मरोड़"]
+  },
+  "Dengue": {
+    "en": ["dengue", "dengue fever", "dengue symptoms"],
+    "hi": ["डेंगू", "डेंगू बुखार", "डेंगू के लक्षण"]
+  },
+  "Malaria": {
+    "en": ["malaria", "malaria fever", "malaria symptoms"],
+    "hi": ["मलेरिया", "मलेरिया बुखार", "मलेरिया के लक्षण"]
+  },
+  "Typhoid": {
+    "en": ["typhoid", "typhoid fever", "typhoid symptoms"],
+    "hi": ["टाइफाइड", "टाइफाइड बुखार", "टाइफाइड के लक्षण"]
+  },
+  "COVID-19": {
+    "en": ["covid", "covid-19", "coronavirus", "covid symptoms"],
+    "hi": ["कोविड", "कोविड-19", "कोरोना वायरस", "कोविड के लक्षण"]
+  },
+  "Flu (Influenza)": {
+    "en": ["flu", "influenza", "seasonal flu", "flu symptoms"],
+    "hi": ["फ्लू", "इन्फ्लूएंजा", "मौसमी फ्लू", "फ्लू के लक्षण"]
+  },
+  "Fever": {
+    "en": ["fever", "high temperature", "body temperature"],
+    "hi": ["बुखार", "तेज़ बुखार", "शरीर का तापमान"]
+  },
+  "Headache": {
+    "en": ["headache", "pain in head", "migraine"],
+    "hi": ["सिरदर्द", "सिर में दर्द", "माइग्रेन"]
+  },
+  "Nausea": {
+    "en": ["nausea", "feeling sick", "urge to vomit"],
+    "hi": ["मतली", "उल्टी जैसा महसूस होना", "जी मिचलाना"]
+  },
+  "Rash": {
+    "en": ["rash", "skin rash", "red patches", "itchy skin"],
+    "hi": ["चकत्ते", "त्वचा पर चकत्ते", "लाल धब्बे", "खुजली वाले चकत्ते"]
+  },
+  "Fatigue": {
+    "en": ["fatigue", "tiredness", "exhaustion", "low energy"],
+    "hi": ["थकान", "थका हुआ महसूस करना", "ऊर्जा की कमी", "शारीरिक थकावट"]
+  },
+  "Burns": {
+    "en": ["burns", "burn injury", "skin burn", "fire burn"],
+    "hi": ["जलने की चोट", "त्वचा जलना", "आग से जलना", "जलन"]
+  },
+  "Cuts": {
+    "en": ["cuts", "wound", "skin cut", "bleeding cut"],
+    "hi": ["कट", "चोट", "त्वचा कटना", "कटा हुआ"]
+  },
+  "Dehydration": {
+    "en": ["dehydration", "lack of fluids", "dry mouth", "fluid loss"],
+    "hi": ["निर्जलीकरण", "पानी की कमी", "सूखा मुँह", "तरल पदार्थ की कमी"]
+  },
+  "Allergic Reactions": {
+    "en": ["allergic reaction", "allergy", "skin allergy", "food allergy"],
+    "hi": ["एलर्जी प्रतिक्रिया", "एलर्जी", "त्वचा एलर्जी", "खाद्य एलर्जी"]
+  },
+  "Anxiety": {
+    "en": ["anxiety", "feeling anxious", "nervousness", "panic"],
+    "hi": ["चिंता", "चिंतित महसूस करना", "घबराहट", "बेचैनी"]
+  },
+  "Insomnia": {
+    "en": ["insomnia", "can't sleep", "sleep disorder", "lack of sleep"],
+    "hi": ["अनिद्रा", "नींद नहीं आना", "नींद की समस्या", "नींद की कमी"]
+  },
+  "Stress": {
+    "en": ["stress", "mental stress", "emotional stress", "feeling stressed","how to manage stress","stress relief tips"],
+    "hi": ["तनाव", "मानसिक तनाव", "भावनात्मक तनाव", "तनावग्रस्त महसूस करना","तनाव से राहत के उपाय","तनावग्रस्त महसूस करना"]
+  },
+  "Mood Swings": {
+    "en": ["mood swings", "emotional ups and downs", "unstable mood","mood changes","how to manage mood swings"],
+    "hi": ["मूड में उतार-चढ़ाव", "भावनात्मक बदलाव", "मूड बदलना","मूड कैसे संभालें","मूड में अस्थिरता"]
+  },
+  "Hygiene": {
+    "en": ["hygiene", "personal hygiene", "cleanliness", "stay clean"],
+    "hi": ["स्वच्छता", "व्यक्तिगत स्वच्छता", "साफ-सफाई", "स्वस्थ रहने के उपाय"]
+  },
+  "Vaccination": {
+    "en": ["vaccination", "vaccine", "get vaccinated", "immunization"],
+    "hi": ["टीकाकरण", "टीका लगवाना", "टीका", "प्रतिरक्षण"]
+  },
+  "Mosquito Protection": {
+    "en": ["mosquito protection", "prevent mosquito bites", "avoid mosquitoes","mosquito safety tips"],
+    "hi": ["मच्छर से बचाव", "मच्छरों से बचने के उपाय","मच्छर काटने से कैसे बचें","मच्छर से सुरक्षा"]
+  },
+  "Balanced Diet": {
+    "en": [
+      "balanced diet", "healthy eating", "nutritious food", "diet tips",
+      "healthy diet", "eat healthy", "diet plan", "nutritious meals"
+    ],
+    "hi": [
+      "संतुलित आहार", "स्वस्थ भोजन", "पोषणयुक्त आहार", "आहार सुझाव",
+      "स्वस्थ आहार", "पोषणयुक्त भोजन", "आहार योजना"
+    ]
+  },
+  "Iron Deficiency": {
+    "en": ["iron deficiency", "low iron", "anemia", "lack of iron"],
+    "hi": ["आयरन की कमी", "कम हीमोग्लोबिन", "खून की कमी", "एनीमिया"]
+  },
+  "Hydration Tips": {
+    "en": ["hydration tips", "stay hydrated", "drink more water", "fluid intake","prevent dehydration", "how to stay hydrated","water intake advice"],
+    "hi": ["हाइड्रेशन सुझाव", "हाइड्रेटेड रहें", "पानी पीने के सुझाव", "तरल पदार्थ लें","निर्जलीकरण से बचाव","पानी की कमी से बचाव","पानी कैसे पिएं"]
+  },
+  "Cough": {
+    "en": ["cough", "dry cough", "wet cough", "persistent cough"],
+    "hi": ["खांसी", "सूखी खांसी", "गीली खांसी", "लगातार खांसी"]
+  },
+  "Leg Pain": {
+    "en": ["leg pain", "pain in legs", "aching legs", "leg cramps"],
+    "hi": ["पैर दर्द", "पैरों में दर्द", "पैरों में ऐंठन", "पैरों में थकान"]
+  },
+  "Sleep Hygiene": {
+    "en": ["sleep hygiene", "better sleep", "healthy sleep habits", "sleep routine"],
+    "hi": ["नींद की स्वच्छता", "अच्छी नींद", "स्वस्थ नींद की आदतें", "नींद का नियम"]
+  },
+  "Emotional Wellness": {
+    "en": ["emotional wellness", "mental wellbeing", "emotional health", "feel emotionally balanced"],
+    "hi": ["भावनात्मक भलाई", "मानसिक भलाई", "भावनात्मक स्वास्थ्य", "भावनात्मक संतुलन"]
+  },
+  "Body Ache": {
+    "en": ["body ache", "body pain", "muscle pain", "whole body pain"],
+    "hi": ["शरीर में दर्द", "शरीर दर्द", "मांसपेशियों में दर्द", "पूरे शरीर में दर्द"]
+  },
+  "Skin Issues": {
+    "en": ["skin issues", "skin problems", "skin irritation", "skin conditions"],
+    "hi": ["त्वचा की समस्याएं", "त्वचा की परेशानी", "त्वचा में जलन", "त्वचा रोग"]
+  },
+  "Itching": {
+    "en": ["itching", "skin itch", "itchy skin", "scratchy feeling"],
+    "hi": ["खुजली", "त्वचा में खुजली", "खुजली महसूस होना", "खुजली वाली त्वचा"]
+  },
+  "Back Pain": {
+    "en": ["back pain", "lower back pain", "upper back pain", "spine pain"],
+    "hi": ["पीठ दर्द", "कमर दर्द", "ऊपरी पीठ दर्द", "रीढ़ में दर्द"]
+  },
+  "Eye Irritation": {
+    "en": ["eye irritation", "burning eyes", "itchy eyes", "red eyes"],
+    "hi": ["आंखों में जलन", "आंखों में खुजली", "लाल आंखें", "आंखों की परेशानी"]
+  },
+  "Hair Fall": {
+    "en": ["hair fall", "hair loss", "losing hair", "thinning hair"],
+    "hi": ["बाल झड़ना", "बालों का गिरना", "बालों की कमी", "बाल पतले होना"]
+  },
+  "Yoga": {
+    "en": ["yoga", "yoga practice", "yoga poses", "do yoga"],
+    "hi": ["योग", "योग अभ्यास", "योगासन", "योग करना"]
+  },
+  "Meditation": {
+    "en": ["meditation", "mindful meditation", "guided meditation", "meditate"],
+    "hi": ["ध्यान", "माइंडफुल मेडिटेशन", "ध्यान लगाना", "ध्यान अभ्यास"]
+  },
+  
+  "Exercise Routine": {
+    "en": ["exercise routine", "workout plan", "fitness schedule", "daily exercise"],
+    "hi": ["व्यायाम दिनचर्या", "फिटनेस योजना", "रोज़ाना व्यायाम", "व्यायाम कार्यक्रम"]
+  },
+  "Mindfulness": {
+    "en": ["mindfulness", "mindful living", "being present", "mental clarity"],
+    "hi": ["माइंडफुलनेस", "सजगता", "वर्तमान में रहना", "मानसिक स्पष्टता"]
+  },
+  "Sprains and Strains": {
+    "en": ["sprains", "strains", "twisted ankle", "muscle strain", "ligament injury"],
+    "hi": ["मोच", "खिंचाव", "टखने में मोच", "मांसपेशियों में खिंचाव", "लिगामेंट की चोट"]
+  },
+  "Nosebleeds": {
+    "en": ["nosebleeds", "bleeding nose", "blood from nose", "nasal bleeding"],
+    "hi": ["नकसीर", "नाक से खून आना", "नाक बहना", "नाक में रक्तस्राव"]
+  },
+  "Heatstroke": {
+    "en": ["heatstroke", "heat exhaustion", "sunstroke", "overheating"],
+    "hi": ["लू लगना", "गर्मी से थकावट", "धूप लगना", "अत्यधिक गर्मी"]
+  },
+  "Painkillers": {
+    "en": ["painkillers", "pain relief medicine", "analgesics", "pain tablets"],
+    "hi": ["दर्द निवारक", "दर्द की दवा", "पेनकिलर", "दर्द से राहत की गोली"]
+  },
+  "Antibiotic Awareness": {
+    "en": ["antibiotic awareness", "antibiotic use", "safe antibiotics", "antibiotic resistance"],
+    "hi": ["एंटीबायोटिक जागरूकता", "एंटीबायोटिक का उपयोग", "सुरक्षित एंटीबायोटिक", "एंटीबायोटिक प्रतिरोध"]
+  },
+  "ORS": {
+    "en": ["ORS", "oral rehydration solution", "electrolyte drink", "rehydration salts"],
+    "hi": ["ओआरएस", "ओरल रिहाइड्रेशन सॉल्यूशन", "इलेक्ट्रोलाइट पेय", "पुनर्जलीकरण नमक"]
+  },
+  "Vomiting": {
+    "en": ["vomiting", "throwing up", "emesis", "nausea and vomiting"],
+    "hi": ["उल्टी", "उल्टी होना", "वमन", "मतली और उल्टी"]
+  },
+  "Diarrhea": {
+    "en": ["diarrhea", "loose motions", "frequent stools", "watery stools"],
+    "hi": ["दस्त", "पतले दस्त", "बार-बार शौच", "पानी जैसे दस्त"]
+  },
+  "Menstrual Cramps": {
+    "en": ["menstrual cramps", "period pain", "cramps during menstruation", "menstrual discomfort"],
+    "hi": ["मासिक दर्द", "पीरियड्स का दर्द", "मासिक धर्म में ऐंठन", "मासिक तकलीफ"]
+  },
+  "Toothache": {
+    "en": ["toothache", "pain in tooth", "dental pain", "aching tooth"],
+    "hi": ["दांत दर्द", "दांत में दर्द", "दांत की तकलीफ", "मसूड़ों में दर्द"]
+  },
+  "Ear Pain": {
+    "en": ["ear pain", "pain in ear", "earache", "inner ear pain"],
+    "hi": ["कान दर्द", "कान में दर्द", "कान की तकलीफ", "कान में ऐंठन"]
+  },
+  "Choking": {
+    "en": ["choking", "airway blockage", "can't breathe", "food stuck in throat"],
+    "hi": ["गला घुटना", "सांस रुकना", "गले में खाना फंसना", "दम घुटना"]
+  },
+  "Fainting": {
+    "en": ["fainting", "loss of consciousness", "blackout", "pass out"],
+    "hi": ["बेहोशी", "होश खोना", "चक्कर आना", "अचेत होना"]
+  },
+  "High Blood Pressure": {
+    "en": ["high blood pressure", "hypertension", "BP issues", "elevated blood pressure"],
+    "hi": ["उच्च रक्तचाप", "हाई बीपी", "रक्तचाप की समस्या", "बीपी बढ़ना"]
+  },
+  "Asthma Awareness": {
+    "en": ["asthma awareness", "asthma symptoms", "breathing issues", "asthma triggers"],
+    "hi": ["अस्थमा जागरूकता", "अस्थमा के लक्षण", "सांस लेने में तकलीफ", "अस्थमा के कारण"]
+  },
+  "Chest Pain": {
+    "en": ["chest pain", "pain in chest", "tightness in chest", "pressure in chest"],
+    "hi": ["सीने में दर्द", "छाती में दर्द", "सीने में जकड़न", "सीने में दबाव"]
+  },
+  "Elderly Cough Care": {
+    "en": ["elderly cough care", "cough in seniors", "old age cough", "cough in elderly"],
+    "hi": ["बुजुर्गों की खांसी देखभाल", "बुजुर्गों को खांसी", "बुजुर्गों की खांसी", "बुजुर्गों के लिए खांसी का इलाज"]
+  },
+  "Feeling Drained": {
+    "en": ["feeling drained", "emotionally exhausted", "low energy", "burnt out"],
+    "hi": ["थका हुआ महसूस करना", "भावनात्मक थकावट", "ऊर्जा की कमी", "थकान महसूस होना"]
+  },
+  "Child Fever": {
+    "en": ["child fever", "fever in kids", "baby fever", "high temperature in child"],
+    "hi": ["बच्चों का बुखार", "बच्चे को बुखार", "बच्चे को तेज़ बुखार", "बच्चों में तापमान"]
+  },
+  
+  "Wellness Practices": {
+    "en": [
+      "wellness practices", "healthy lifestyle", "self care", "wellness routine",
+      "yoga", "meditation", "mindfulness", "exercise routine", "daily exercise",
+      "sleep hygiene", "better sleep", "hydration tips", "stay hydrated", "balanced diet"
+    ],
+    "hi": [
+      "वेलनेस अभ्यास", "स्वस्थ जीवनशैली", "स्व-देखभाल", "वेलनेस दिनचर्या",
+      "योग", "ध्यान", "माइंडफुलनेस", "व्यायाम दिनचर्या", "रोज़ाना व्यायाम",
+      "नींद की स्वच्छता", "अच्छी नींद", "हाइड्रेशन सुझाव", "हाइड्रेटेड रहें", "संतुलित आहार"
+    ]
+  },
+  "Medication Awareness": {
+    "en": [
+      "medication awareness", "safe medicine use", "antibiotic awareness", "antibiotic resistance",
+      "painkillers", "pain relief medicine", "oral rehydration solution", "ors", "rehydration salts"
+    ],
+    "hi": [
+      "दवा जागरूकता", "सुरक्षित दवा उपयोग", "एंटीबायोटिक जागरूकता", "एंटीबायोटिक प्रतिरोध",
+      "दर्द निवारक", "दर्द की दवा", "ओआरएस", "ओरल रिहाइड्रेशन सॉल्यूशन", "पुनर्जलीकरण नमक"
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

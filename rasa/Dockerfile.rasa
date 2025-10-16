@@ -1,0 +1,10 @@
+FROM rasa/rasa:3.6.8-full
+
+WORKDIR /app
+COPY . /app
+
+USER root
+RUN rasa train
+
+EXPOSE 5005
+CMD ["run", "--enable-api", "--cors", "*"]

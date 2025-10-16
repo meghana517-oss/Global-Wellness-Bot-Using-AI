@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  rasa:
+    build:
+      context: ../rasa
+      dockerfile: Dockerfile.rasa
+    container_name: rasa
+    ports:
+      - "5005:5005"
+    volumes:
+      - ../rasa:/app
+    depends_on:
+      - backend
+    networks:
+      - wellnet
+
+  backend:
+    build:
+      context: ../backend
+    container_name: backend
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend:/app
+    networks:
+      - wellnet
+
+  streamlit:
+    build:
+      context: ../frontend
+    container_name: streamlit
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../frontend:/app
+    depends_on:
+      - backend
+      - rasa
+    networks:
+      - wellnet
+
+networks:
+  wellnet:
+    driver: bridge

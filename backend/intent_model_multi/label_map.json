@@ -1,0 +1,18 @@
+{
+  "id2label": {
+    "0": "ask_about_medication",
+    "1": "ask_about_symptom",
+    "2": "ask_about_wellness_tip",
+    "3": "express_emotion",
+    "4": "greeting",
+    "5": "query_first_aid"
+  },
+  "label2id": {
+    "ask_about_medication": 0,
+    "ask_about_symptom": 1,
+    "ask_about_wellness_tip": 2,
+    "express_emotion": 3,
+    "greeting": 4,
+    "query_first_aid": 5
+  }
+}
