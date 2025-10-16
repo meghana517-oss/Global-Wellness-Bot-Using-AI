@@ -1,0 +1,13 @@
+                        precision    recall  f1-score   support
+
+  ask_about_medication      0.429     0.375     0.400         8
+     ask_about_symptom      0.417     0.625     0.500         8
+ask_about_wellness_tip      0.467     0.875     0.609         8
+       express_emotion      0.818     1.000     0.900         9
+              greeting      0.000     0.000     0.000         7
+       query_first_aid      0.000     0.000     0.000         8
+
+             micro avg      0.533     0.500     0.516        48
+             macro avg      0.355     0.479     0.401        48
+          weighted avg      0.372     0.500     0.420        48
+           samples avg      0.390     0.488     0.419        48

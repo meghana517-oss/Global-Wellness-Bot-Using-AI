@@ -1,0 +1,217 @@
+{ "text": "i have a headache", "intent": "ask_about_medication" }
+{ "text": "what tablet is good for fever?", "intent": "ask_about_medication" }
+{ "text": "can you suggest medicine for cold and cough?", "intent": "ask_about_medication" }
+{ "text": "which medicine helps with stomach pain?", "intent": "ask_about_medication" }
+{ "text": "can i take paracetamol for back pain?", "intent": "ask_about_medication" }
+{ "text": "is there any tablet for joint pain?", "intent": "ask_about_medication" }
+{ "text": "what medicine is good for acidity?", "intent": "ask_about_medication" }
+{ "text": "which tablet helps with allergies?", "intent": "ask_about_medication" }
+{ "text": "मुझे headache है", "intent": "ask_about_medication" }
+{ "text": "बुखार के लिए कौन सी दवा अच्छी है?", "intent": "ask_about_medication" }
+{ "text": "क्या आप cold की दवा बता सकते हैं?", "intent": "ask_about_medication" }
+{ "text": "पेट pain के लिए कौन सी गोली सही है?", "intent": "ask_about_medication" }
+{ "text": "allergy के लिए कौन सी दवा सही रहेगी?", "intent": "ask_about_medication" }
+{ "text": "best medicine for stomach infection?", "intent": "ask_about_medication" }
+{ "text": "which tablet can reduce fever fast?", "intent": "ask_about_medication" }
+{ "text": "गले में throat pain के लिए कौन सी दवा लें?", "intent": "ask_about_medication" }
+
+{ "text": "i am feeling pain in my chest", "intent": "ask_about_symptom" }
+{ "text": "why am i getting throat pain often?", "intent": "ask_about_symptom" }
+{ "text": "my legs are swelling", "intent": "ask_about_symptom" }
+{ "text": "i feel dizziness after walking.", "intent": "ask_about_symptom" }
+{ "text": "i feel weak and tiredness often", "intent": "ask_about_symptom" }
+{ "text": "why do i get frequent headaches?", "intent": "ask_about_symptom" }
+{ "text": "why am i having stomach pain cramps?", "intent": "ask_about_symptom" }
+{ "text": "i feel chest discomfort sometimes.", "intent": "ask_about_symptom" }
+{ "text": "why do i feel shortness of breath?", "intent": "ask_about_symptom" }
+{ "text": "मेरे सीने में pain हो रहा है", "intent": "ask_about_symptom" }
+{ "text": "मुझे बार-बार गले में throat pain क्यों होती है?", "intent": "ask_about_symptom" }
+{ "text": "मेरे पैरों में swelling है", "intent": "ask_about_symptom" }
+{ "text": "चलने के बाद dizziness क्यों आते हैं?", "intent": "ask_about_symptom" }
+{ "text": "मुझे बार-बार tiredness क्यों महसूस होती है?", "intent": "ask_about_symptom" }
+{ "text": "पीठ में pain क्यों होता है?", "intent": "ask_about_symptom" }
+{ "text": "अक्सर head भारी क्यों लगता है?", "intent": "ask_about_symptom" }
+
+{ "text": "can you give me a wellness tip for better sleep?", "intent": "ask_about_wellness_tip" }
+{ "text": "how can i improve my daily energy naturally?", "intent": "ask_about_wellness_tip" }
+{ "text": "what is the best way to manage stress?", "intent": "ask_about_wellness_tip" }
+{ "text": "give me tips for a healthy diet.", "intent": "ask_about_wellness_tip" }
+{ "text": "how can i stay active all day?", "intent": "ask_about_wellness_tip" }
+{ "text": "what habits improve mental health?", "intent": "ask_about_wellness_tip" }
+{ "text": "give me a simple exercise tip.", "intent": "ask_about_wellness_tip" }
+{ "text": "अच्छी नींद के लिए कोई टिप बताइए।", "intent": "ask_about_wellness_tip" }
+{ "text": "ऊर्जा बढ़ाने के लिए प्राकृतिक उपाय क्या हैं?", "intent": "ask_about_wellness_tip" }
+{ "text": "तनाव को कैसे कम करें?", "intent": "ask_about_wellness_tip" }
+{ "text": "स्वस्थ आहार के लिए टिप्स दीजिए।", "intent": "ask_about_wellness_tip" }
+{ "text": "थकान कम करने के लिए क्या करें?", "intent": "ask_about_wellness_tip" }
+{ "text": "क्या आप मुझे ध्यान के लिए कोई सुझाव देंगे?", "intent": "ask_about_wellness_tip" }
+{ "text": "how to reduce screen time for better health?", "intent": "ask_about_wellness_tip" }
+
+{ "text": "i am feeling very sadness today.", "intent": "express_emotion" }
+{ "text": "i am so happiness and excited!", "intent": "express_emotion" }
+{ "text": "i am feeling anxiety and worried.", "intent": "express_emotion" }
+{ "text": "i am anger right now.", "intent": "express_emotion" }
+{ "text": "sometimes i feel very lonely.", "intent": "express_emotion" }
+{ "text": "i feel relaxed today.", "intent": "express_emotion" }
+{ "text": "i am nervous before exams.", "intent": "express_emotion" }
+{ "text": "मैं आज बहुत उदास हूँ।", "intent": "express_emotion" }
+{ "text": "मैं बहुत खुश हूँ।", "intent": "express_emotion" }
+{ "text": "मैं शांत हूँ।", "intent": "express_emotion" }
+{ "text": "मुझे anger आ रहा है।", "intent": "express_emotion" }
+{ "text": "मैं बहुत घबराया हुआ हूँ।", "intent": "express_emotion" }
+{ "text": "आज मुझे बहुत अच्छा लग रहा है।", "intent": "express_emotion" }
+{ "text": "मुझे अकेलापन महसूस हो रहा है।", "intent": "express_emotion" }
+
+{ "text": "hi there", "intent": "greeting" }
+{ "text": "hey", "intent": "greeting" }
+{ "text": "good morning!", "intent": "greeting" }
+{ "text": "good evening!", "intent": "greeting" }
+{ "text": "hello friend!", "intent": "greeting" }
+{ "text": "how’s your day going?", "intent": "greeting" }
+{ "text": "नमस्ते!", "intent": "greeting" }
+{ "text": "हाय!", "intent": "greeting" }
+{ "text": "कैसे हो?", "intent": "greeting" }
+{ "text": "शुभ प्रभात!", "intent": "greeting" }
+{ "text": "शुभ संध्या!", "intent": "greeting" }
+{ "text": "क्या हाल है?", "intent": "greeting" }
+{ "text": "आप कैसे हैं?", "intent": "greeting" }
+
+{ "text": "what should i do if i get a cut?", "intent": "query_first_aid" }
+{ "text": "how to stop bleeding quickly?", "intent": "query_first_aid" }
+{ "text": "what is the first aid for a burn?", "intent": "query_first_aid" }
+{ "text": "tell me first aid steps for snake bite.", "intent": "query_first_aid" }
+{ "text": "how to clean a wound at home?", "intent": "query_first_aid" }
+{ "text": "what to do for a sprain?", "intent": "query_first_aid" }
+{ "text": "अगर चोट लग जाए तो क्या करें?", "intent": "query_first_aid" }
+{ "text": "खून बहना कैसे रोकें?", "intent": "query_first_aid" }
+{ "text": "जलने पर क्या करना चाहिए?", "intent": "query_first_aid" }
+{ "text": "साँप काटने पर क्या करें?", "intent": "query_first_aid" }
+{ "text": "चोट लगने पर घर पर क्या करें?", "intent": "query_first_aid" }
+{ "text": "जल जाने पर प्राथमिक उपचार क्या है?", "intent": "query_first_aid" }
+{ "text": "नाक से खून आने पर क्या करें?", "intent": "query_first_aid" }
+{ "text": "what’s the first aid for insect bite?", "intent": "query_first_aid" }
+
+{ "text": "hi, i’m feeling anxiety and have throat pain.", "intent": ["greeting", "express_emotion", "ask_about_symptom"] }
+{ "text": "मुझे बहुत stress है और सिर में headache भी है।", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "hey, i got a small burn on my hand. what should i do?", "intent": ["greeting", "query_first_aid"] }
+{ "text": "i feel dizziness and emotionally drained.", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "headache है और मन भी sadness है।", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "hi, i’m not feeling well and need advice.", "intent": ["greeting", "ask_about_symptom"] }
+{ "text": "i have chest pain and i’m feeling scared.", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "hey, i’m feeling low and also have a fever.", "intent": ["greeting", "express_emotion", "ask_about_symptom"] }
+{ "text": "मुझे stomach pain है और मैं बहुत परेशान हूँ।", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "good morning! i feel tiredness and need a wellness tip.", "intent": ["greeting", "ask_about_wellness_tip"] }
+{ "text": "can you help me with stress and suggest a wellness tip?", "intent": "ask_about_wellness_tip" }
+{ "text": "क्या आप मुझे अच्छी नींद के लिए कोई टिप दे सकते हैं?", "intent": "ask_about_wellness_tip" }
+{ "text": "can you suggest a medicine for joint pain?", "intent": "ask_about_medication" }
+{ "text": "i’m feeling anxiety and want to know what to do.", "intent": ["express_emotion", "ask_about_wellness_tip"] }
+{ "text": "can you help me with a headache and suggest something to feel better?", "intent": ["ask_about_symptom", "ask_about_wellness_tip"] }
+
+{ "text": "i’m happiness today but also feeling a bit dizziness.", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "hey, i have throat pain and feel very tiredness.", "intent": ["greeting", "ask_about_symptom"] }
+{ "text": "can you suggest a medicine and a wellness tip for fatigue?", "intent": ["ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "headache है, कोई medicine और उपाय बताइए।", "intent": ["ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "i feel anxiety and want to sleep better.", "intent": ["express_emotion", "ask_about_wellness_tip"] }
+{ "text": "hey, i have a burn and feel very stress.", "intent": ["query_first_aid", "express_emotion"] }
+{ "text": "can you help me with chest pain and suggest a wellness tip?", "intent": ["ask_about_symptom", "ask_about_wellness_tip"] }
+{ "text": "मुझे fever है और मैं बहुत थका हुआ हूँ।", "intent": ["ask_about_symptom", "express_emotion"] }
+{ "text": "good morning! i feel dizziness and need help.", "intent": ["greeting", "ask_about_symptom"] }
+{ "text": "i feel stress and have throat pain, what should i do?", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "मुझे बहुत tiredness है और कोई medicine चाहिए।", "intent": ["ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "i’m bleeding and also feeling scared.", "intent": ["query_first_aid", "express_emotion"] }
+{ "text": "hey, i’m not feeling well and need help with stress.", "intent": ["greeting", "ask_about_wellness_tip"] }
+{ "text": "fever और headache के लिए कौन सी tablet लें?", "intent": ["ask_about_medication", "ask_about_symptom"] }
+{ "text": "i feel dizziness and want a wellness tip.", "intent": ["ask_about_symptom", "ask_about_wellness_tip"] }
+{ "text": "hello! i’m feeling anxiety and have chest discomfort.", "intent": ["greeting", "express_emotion", "ask_about_symptom"] }
+{ "text": "can you help me with a burn and also suggest a wellness remedy?", "intent": ["query_first_aid", "ask_about_wellness_tip"] }
+{ "text": "मुझे चोट लगी है और मैं बहुत परेशान हूँ।", "intent": ["query_first_aid", "express_emotion"] }
+{ "text": "hey, i’m happiness today but my stomach pain hurts.", "intent": ["greeting", "express_emotion", "ask_about_symptom"] }
+{ "text": "can you give me a tip for better sleep and less anxiety?", "intent": ["ask_about_wellness_tip", "express_emotion"] }
+{ "text": "मुझे बहुत anxiety हो रही है और अच्छी नींद नहीं आती।", "intent": ["express_emotion", "ask_about_wellness_tip"] }
+
+{ "text": "which medicine is used for headache relief?", "intent": "ask_about_medication" }
+{ "text": "best tablet for body pain?", "intent": "ask_about_medication" }
+{ "text": "which tablet helps with digestion?", "intent": "ask_about_medication" }
+{ "text": "cold and flu medicine name please?", "intent": "ask_about_medication" }
+{ "text": "is there medicine for anxiety relief?", "intent": "ask_about_medication" }
+{ "text": "which capsule reduces fever?", "intent": "ask_about_medication" }
+
+{ "text": "i often get back pain, why is that?", "intent": "ask_about_symptom" }
+{ "text": "why do i feel heaviness in head?", "intent": "ask_about_symptom" }
+{ "text": "why am i unable to sleep properly?", "intent": "ask_about_symptom" }
+{ "text": "why do i get short of breath while walking?", "intent": "ask_about_symptom" }
+{ "text": "i feel sudden chest tightness.", "intent": "ask_about_symptom" }
+{ "text": "why am i always tired?", "intent": "ask_about_symptom" }
+{ "text": "my stomach hurts after eating.", "intent": "ask_about_symptom" }
+
+{ "text": "can you suggest food for better sleep?", "intent": "ask_about_wellness_tip" }
+{ "text": "give me tips to stay hydrated.", "intent": "ask_about_wellness_tip" }
+{ "text": "how can i manage exam stress?", "intent": "ask_about_wellness_tip" }
+{ "text": "what yoga helps with calm mind?", "intent": "ask_about_wellness_tip" }
+{ "text": "suggest morning routine for health.", "intent": "ask_about_wellness_tip" }
+{ "text": "what is a simple diet for energy?", "intent": "ask_about_wellness_tip" }
+{ "text": "any breathing exercise to relax?", "intent": "ask_about_wellness_tip" }
+
+{ "text": "hi! i have a minor injury and feel stressed.", "intent": ["greeting", "query_first_aid", "express_emotion"] }
+{ "text": "can you help me with cold, headache, and stress?", "intent": ["ask_about_symptom", "ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "मुझे सिरदर्द और थकान महसूस हो रही है।", "intent": ["ask_about_symptom", "ask_about_wellness_tip"] }
+{ "text": "what should i do for a minor burn?", "intent": "query_first_aid" }
+{ "text": "how to treat a bleeding wound?", "intent": "query_first_aid" }
+{ "text": "what’s the first aid for a sprained ankle?", "intent": "query_first_aid" }
+{ "text": "what to apply on a cut to stop bleeding?", "intent": "query_first_aid" }
+{ "text": "मुझे चोट लग गई है, प्राथमिक उपचार क्या है?", "intent": "query_first_aid" }
+{ "text": "अगर कोई बेहोश हो जाए तो क्या करना चाहिए?", "intent": "query_first_aid" }
+{ "text": "what should i do if someone faints suddenly?", "intent": "query_first_aid" }
+{ "text": "first aid steps for insect bites?", "intent": "query_first_aid" }
+{ "text": "what should i do if someone gets an electric shock?", "intent": "query_first_aid" }
+{ "text": "how to give first aid for choking?", "intent": "query_first_aid" }
+
+{ "text": "i feel really anxious today.", "intent": "express_emotion" }
+{ "text": "i'm overwhelmed and can't focus.", "intent": "express_emotion" }
+{ "text": "मुझे बहुत उदासी महसूस हो रही है।", "intent": "express_emotion" }
+{ "text": "i feel lonely even when i'm around people.", "intent": "express_emotion" }
+{ "text": "i cried last night and don’t know why.", "intent": "express_emotion" }
+{ "text": "i’m stressed about everything lately.", "intent": "express_emotion" }
+{ "text": "i feel emotionally drained.", "intent": "express_emotion" }
+{ "text": "मुझे बहुत तनाव हो रहा है।", "intent": "express_emotion" }
+{ "text": "i’m scared and don’t know what to do.", "intent": "express_emotion" }
+{ "text": "i feel like i’m not good enough.", "intent": "express_emotion" }
+{ "text": "i’m mentally exhausted.", "intent": "express_emotion" }
+{ "text": "i just want someone to listen.", "intent": "express_emotion" }
+{ "text": "मुझे अकेलापन महसूस हो रहा है।", "intent": "express_emotion" }
+{ "text": "i feel stuck and hopeless.", "intent": "express_emotion" }
+{ "text": "i’m not okay, but i don’t want to talk about it.", "intent": "express_emotion" }
+{ "text": "i feel like i’m falling apart.", "intent": "express_emotion" }
+
+{ "text": "I feel dizzy and weak.", "intent": "ask_about_symptom" }
+{ "text": "My throat is sore and itchy.", "intent": "ask_about_symptom" }
+{ "text": "I have chills and body ache.", "intent": "ask_about_symptom" }
+{ "text": "My stomach hurts after eating.", "intent": "ask_about_symptom" }
+{ "text": "I’m coughing a lot lately.", "intent": "ask_about_symptom" }
+{ "text": "My eyes are burning and watery.", "intent": "ask_about_symptom" }
+{ "text": "I feel pressure in my chest.", "intent": "ask_about_symptom" }
+{ "text": "I have a rash on my arms.", "intent": "ask_about_symptom" }
+{ "text": "My joints are stiff in the morning.", "intent": "ask_about_symptom" }
+{ "text": "I feel nauseated and bloated.", "intent": "ask_about_symptom" }
+
+{ "text": "How can I improve my sleep naturally?", "intent": "ask_about_wellness_tip" }
+{ "text": "Give me tips to stay mentally healthy.", "intent": "ask_about_wellness_tip" }
+{ "text": "What’s a good morning routine for wellness?", "intent": "ask_about_wellness_tip" }
+{ "text": "How do I boost my immunity?", "intent": "ask_about_wellness_tip" }
+{ "text": "Suggest ways to reduce stress.", "intent": "ask_about_wellness_tip" }
+{ "text": "Any tips for staying hydrated?", "intent": "ask_about_wellness_tip" }
+{ "text": "How can I eat healthier every day?", "intent": "ask_about_wellness_tip" }
+{ "text": "What are some breathing exercises?", "intent": "ask_about_wellness_tip" }
+{ "text": "How do I stay active while working from home?", "intent": "ask_about_wellness_tip" }
+{ "text": "Give me a wellness tip for better focus.", "intent": "ask_about_wellness_tip" }
+
+{ "text": "I feel sick and really anxious today.", "intent": ["ask_about_symptom", "express_emotion"] }
+{ "text": "Can you suggest a medicine and something to help me relax?", "intent": ["ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "I burned my hand and I’m freaking out.", "intent": ["query_first_aid", "express_emotion"] }
+{ "text": "Hello, I have a headache and need a wellness tip.", "intent": ["greeting", "ask_about_medication", "ask_about_wellness_tip"] }
+{ "text": "I feel dizzy and want to know what to do.", "intent": ["ask_about_symptom", "query_first_aid"] }
+{ "text": "I’m not okay and I have a fever.", "intent": ["express_emotion", "ask_about_symptom"] }
+{ "text": "Hi, I need help with cold and also feeling down.", "intent": ["greeting", "ask_about_medication", "express_emotion"] }
+{ "text": "I’m tired and my stomach hurts. Any tips?", "intent": ["ask_about_symptom", "ask_about_wellness_tip"] }
+{ "text": "I feel weak and want to know what medicine to take.", "intent": ["ask_about_symptom", "ask_about_medication"] }
+{ "text": "Can you help me feel better and treat this rash?", "intent": ["ask_about_wellness_tip", "ask_about_symptom"] }

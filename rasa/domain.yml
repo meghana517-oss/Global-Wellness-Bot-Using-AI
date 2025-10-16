@@ -1,0 +1,110 @@
+version: "3.1"
+
+intents:
+  - ask_about_symptom
+  - query_first_aid
+  - ask_about_wellness_tip
+  - ask_about_condition
+  - ask_about_prevention
+  - greet
+  - goodbye
+  - bot_challenge
+  - report_symptom
+  - ask_about_medication
+  - ask_about_emotion
+  - ask_about_duration
+  - ask_about_body_part
+  - ask_about_age_group
+  - report_emotion
+
+entities:
+  - symptom
+  - body_part
+  - duration
+  - emotion
+  - medication
+  - age_group
+  - condition
+
+slots:
+  symptom:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: symptom
+
+  body_part:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: body_part
+
+  duration:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: duration
+
+  medication:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: medication
+
+  emotion:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: emotion
+
+  age_group:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age_group
+
+  condition:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: condition
+
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom  
+
+actions:
+  - action_provide_symptoms
+  - action_provide_first_aid
+  - action_provide_wellness_tip
+  - action_health_info
+  - action_greet
+  - action_goodbye
+  - action_bot_challenge
+  - action_query_kb 
+
+responses:
+  utter_default:
+    - text: "Sorry, I didn't understand that. Can you rephrase?"
+    - text: "माफ़ कीजिए, मैं समझ नहीं पाया। कृपया दोबारा पूछें।"
+
+  utter_fallback:
+    - text: "I'm here to help, but I didn't quite understand that. Could you try rephrasing?"
+    - text: "मैं आपकी मदद करना चाहता हूँ, लेकिन मैं समझ नहीं पाया। कृपया दोबारा पूछें।"
+
+  utter_disclaimer:
+    - text: "⚠️ This information is for educational purposes only and should not be considered medical advice. Please consult a healthcare professional."
+    - text: "⚠️ यह जानकारी केवल शैक्षिक उद्देश्यों के लिए है और इसे चिकित्सीय सलाह नहीं माना जाना चाहिए। कृपया व्यक्तिगत मार्गदर्शन के लिए स्वास्थ्य विशेषज्ञ से परामर्श करें।"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

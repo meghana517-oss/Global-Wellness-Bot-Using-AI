@@ -1,4 +1,5 @@
-# Python
+# === Python ==================================================================
+# Bytecode, build artifacts and pip-generated files
 __pycache__/
 *.py[cod]
 *.egg
@@ -7,17 +8,84 @@ dist/
 build/
 *.log
 
-# Virtual environments
+# === Virtual environments ====================================================
 venv/
+.venv/
 .env/
 
-# IDEs
+# === IDEs & OS ==============================================================
 .vscode/
 .idea/
-
-# OS files
 .DS_Store
 Thumbs.db
 
-wellbot/
+# === Project-specific =======================================================
+# Keep the project code, data and configuration tracked by default.
+# Don't blindly ignore top-level folders that contain important code or data.
+
+# Backend cleanup (ignore caches and DB files, but keep source code)
+backend/__pycache__/
+backend/routes/__pycache__/
+backend/utils/__pycache__/
+backend/wellness.db
+backend/wellness.sqbpro
+# NOTE: `backend/intent_model_multi/` contains model integration code. Track the
+# folder (do NOT ignore) so integration scripts are pushed. Binary model files
+# themselves are ignored by the patterns below.
+
+# Frontend cleanup
+frontend/__pycache__/
+frontend/.streamlit/
+*.db
+
+# Rasa: ignore build/cache and trained model bundles
+.rasa/
+rasa/.rasa/
+rasa/models/*.tar.gz
+
+# Hide large or temporary Rasa cache files
+rasa/__pycache__/
+
+# Keep important Rasa sources (nlu/stories/rules/domain/actions) tracked.
+
+# === Data / models / artifacts ==============================================
+# IMPORTANT: `data/` and `data_structured/` are part of the project and are
+# tracked. The following patterns ignore large binary checkpoints and archives
+# while keeping metadata, scripts and small configs in the repository.
+
+# Do not track common binary model weight files
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.pth
+*.model
+
+# Archive / temporary artifacts
+*.tar.gz
+*.zip
+
+# Keep project-specific results and heavy model folders out of git by default
+results/
+models/
+archives/
+__archive__/
+
+# === Secrets / local configs ================================================
+# These files often contain secrets or local endpoints. Keep them out of git.
+credentials.yml
+endpoints.yml
+config.yml
+.env
+
+# === Node / frontend ========================================================
+node_modules/
+
+# === Helpful notes ==========================================================
+# If you need to include a specific model file or archive, add it deliberately
+# with `git add -f path/to/file` and document why it is tracked in the repo.
+# To inspect large files before committing, run `.
+# scripts\list_large_files.ps1 -ThresholdMB 10` (PowerShell).
+
 

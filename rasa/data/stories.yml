@@ -1,0 +1,85 @@
+version: "3.1"
+
+stories:
+
+- story: greet user
+  steps:
+    - intent: greet
+    - action: action_greet
+
+- story: say goodbye
+  steps:
+    - intent: goodbye
+    - action: action_goodbye
+
+- story: bot identity
+  steps:
+    - intent: bot_challenge
+    - action: action_bot_challenge
+
+- story: provide symptoms
+  steps:
+    - intent: ask_about_symptom
+    - action: action_query_kb
+
+- story: provide first aid
+  steps:
+    - intent: query_first_aid
+    - action: action_query_kb
+
+- story: provide wellness tip
+  steps:
+    - intent: ask_about_wellness_tip
+    - action: action_provide_wellness_tip
+
+- story: provide condition info
+  steps:
+    - intent: ask_about_condition
+    - action: action_query_kb
+
+- story: respond to reported symptoms
+  steps:
+    - intent: report_symptom
+    - action: action_provide_first_aid
+
+- story: ask about medication
+  steps:
+    - intent: ask_about_medication
+    - action: action_provide_first_aid
+
+- story: ask about emotion
+  steps:
+    - intent: ask_about_emotion
+    - action: action_provide_wellness_tip
+
+- story: ask about duration
+  steps:
+    - intent: ask_about_duration
+    - action: action_provide_symptoms
+
+- story: ask about body part
+  steps:
+    - intent: ask_about_body_part
+    - action: action_provide_symptoms
+
+- story: ask about age group
+  steps:
+    - intent: ask_about_age_group
+    - action: action_provide_first_aid
+
+- story: ask about prevention
+  steps:
+    - intent: ask_about_prevention
+    - action: action_query_kb
+
+- story: report emotion
+  steps:
+    - intent: report_emotion
+    - action: action_provide_wellness_tip
+
+- story: provide condition info with slot
+  steps:
+    - intent: ask_about_condition
+    - slot_was_set:
+        - condition: "stomach ache"
+    - action: action_query_kb
