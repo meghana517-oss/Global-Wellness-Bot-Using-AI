@@ -11,3 +11,6 @@ passlib[bcrypt]
 bcrypt==4.0.1
 transformers
 deep-translator
+rasa-sdk==3.7.0
+python-dotenv
+
